@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+
+	<project basedir="." default="build" name="WeatherDataApp">
+             
+    <property name="debuglevel" value="source,lines,vars"/>
+    <property name="target" value="1.8"/>
+    <property name="source" value="1.8"/>
+	  
+    <path id="WeatherDataApp.classpath">
+        <pathelement location="bin"/>
+        <pathelement location="lib/advancedPersistentLookupLib-1.0.jar"/>
+        <pathelement location="lib/asm-1.0.2.jar"/>
+        <pathelement location="lib/bcprov_1.51.0.jar"/>
+        <pathelement location="lib/com.google.guava_15.0.0.v201403281430.jar"/>
+        <pathelement location="lib/commons-collections-3.2.2.jar"/>
+        <pathelement location="lib/cryptacular-1.0.jar"/>
+        <pathelement location="lib/cxf-core-3.1.5.jar"/>
+        <pathelement location="lib/cxf-rt-bindings-soap-3.1.5.jar"/>
+        <pathelement location="lib/cxf-rt-databinding-jaxb-3.1.5.jar"/>
+        <pathelement location="lib/cxf-rt-frontend-jaxrs-3.1.5.jar"/>
+        <pathelement location="lib/cxf-rt-rs-client-3.1.5.jar"/>
+        <pathelement location="lib/cxf-rt-rs-extension-providers-3.1.5.jar"/>
+        <pathelement location="lib/cxf-rt-security-3.1.5.jar"/>
+        <pathelement location="lib/cxf-rt-security-saml-3.1.5.jar"/>
+        <pathelement location="lib/cxf-rt-transports-http-3.1.5.jar"/>
+        <pathelement location="lib/cxf-rt-ws-security-3.1.5.jar"/>
+        <pathelement location="lib/cxf-rt-wsdl-3.1.5.jar"/>
+        <pathelement location="lib/dom4j-1.6.1.jar"/>
+        <pathelement location="lib/ehcache-2.9.0.jar"/>
+        <pathelement location="lib/jasypt-1.9.2.jar"/>
+        <pathelement location="lib/javax.annotation_1.2.0.v201401042248.jar"/>
+        <pathelement location="lib/javax.ws.rs-api-2.0.1.jar"/>
+        <pathelement location="lib/javax.wsdl_1.6.2.v201012040545.jar"/>
+        <pathelement location="lib/jaxen-1.1.1.jar"/>
+        <pathelement location="lib/jboss-serialization.jar"/>
+        <pathelement location="lib/jettison-1.3.7.jar"/>
+        <pathelement location="lib/joda-time-2.7.jar"/>
+        <pathelement location="lib/json-path-1.2.0.jar"/>
+        <pathelement location="lib/json-smart-2.1.0.jar"/>
+        <pathelement location="lib/log4j-1.2.15.jar"/>
+        <pathelement location="lib/log4j-1.2.16.jar"/>
+        <pathelement location="lib/neethi-3.0.3.jar"/>
+        <pathelement location="lib/opensaml-core-3.1.1.jar"/>
+        <pathelement location="lib/opensaml-profile-api-3.1.1.jar"/>
+        <pathelement location="lib/opensaml-saml-api-3.1.1.jar"/>
+        <pathelement location="lib/opensaml-saml-impl-3.1.1.jar"/>
+        <pathelement location="lib/opensaml-security-api-3.1.1.jar"/>
+        <pathelement location="lib/opensaml-security-impl-3.1.1.jar"/>
+        <pathelement location="lib/opensaml-soap-api-3.1.1.jar"/>
+        <pathelement location="lib/opensaml-xacml-api-3.1.1.jar"/>
+        <pathelement location="lib/opensaml-xacml-impl-3.1.1.jar"/>
+        <pathelement location="lib/opensaml-xacml-saml-api-3.1.1.jar"/>
+        <pathelement location="lib/opensaml-xacml-saml-impl-3.1.1.jar"/>
+        <pathelement location="lib/opensaml-xmlsec-api-3.1.1.jar"/>
+        <pathelement location="lib/opensaml-xmlsec-impl-3.1.1.jar"/>
+        <pathelement location="lib/org.apache.commons.codec_1.6.0.v201305230611.jar"/>
+        <pathelement location="lib/org.apache.log4j_1.2.15.v201012070815.jar"/>
+        <pathelement location="lib/routines.jar"/>
+        <pathelement location="lib/security-common-6.2.0-SNAPSHOT.jar"/>
+        <pathelement location="lib/slf4j-api-1.7.5.jar"/>
+        <pathelement location="lib/slf4j-log4j12-1.7.5.jar"/>
+        <pathelement location="lib/stax-api-1.0.1.jar"/>
+        <pathelement location="lib/stax2-api-3.1.4.jar"/>
+        <pathelement location="lib/talendcsv.jar"/>
+        <pathelement location="lib/trove.jar"/>
+        <pathelement location="lib/woodstox-core-asl-4.4.1.jar"/>
+        <pathelement location="lib/wss4j-policy-2.1.4.jar"/>
+        <pathelement location="lib/wss4j-ws-security-common-2.1.4.jar"/>
+        <pathelement location="lib/wss4j-ws-security-dom-2.1.4.jar"/>
+        <pathelement location="lib/wss4j-ws-security-policy-stax-2.1.4.jar"/>
+        <pathelement location="lib/wss4j-ws-security-stax-2.1.4.jar"/>
+        <pathelement location="lib/xmlschema-core-2.2.1.jar"/>
+        <pathelement location="lib/xmlsec-2.0.5.jar"/>
+        <pathelement location="lib/xpathutil-1.0.0.jar"/>
+    </path>
+    
+    <path id="run.WeatherForecast.classpath">
+        <path refid="WeatherDataApp.classpath"/>        
+    </path>
+	
+    <target name="init">
+        <mkdir dir="bin"/>
+        <copy includeemptydirs="false" todir="bin">
+            <fileset dir="src">
+                <exclude name="**/*.java"/>
+            </fileset>
+        </copy>
+    </target>
+	
+    <target name="clean">
+        <delete dir="bin"/>
+    </target>
+	
+    <target depends="clean" name="cleanall"/>
+    <target depends="build-subprojects,build-project" name="build"/>
+    <target name="build-subprojects"/>
+	
+    <target depends="init" name="build-project">
+        <echo message="${ant.project.name}: ${ant.file}"/>
+        <javac debug="true" debuglevel="${debuglevel}" destdir="bin" includeantruntime="false" source="${source}" target="${target}">
+            <src path="src"/>
+            <classpath refid="WeatherDataApp.classpath"/>
+        </javac>
+    </target>
+	
+    <target name="WeatherForecast">
+        <java classname="weather.WeatherForecast" failonerror="true" fork="yes">
+            <classpath refid="run.WeatherForecast.classpath"/>
+        	<arg value="${arg0}"/>
+        	<arg value="${arg1}"/>
+        </java>
+    </target>
+</project>
